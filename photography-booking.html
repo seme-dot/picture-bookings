@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .pricing {
+            margin-top: 20px;
+            text-align: left;
+            padding: 15px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .pricing h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book a Photography Session</h2>
+        <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="session">Session Type:</label>
+            <select id="session" name="session">
+                <option value="portrait">Portrait - $100</option>
+                <option value="event">Event - $300</option>
+                <option value="wedding">Wedding - $800</option>
+                <option value="product">Product - $150</option>
+            </select>
+            
+            <button type="submit">Submit Booking</button>
+        </form>
+        <p id="confirmation" style="display:none; color:green; font-weight:bold;">Your booking has been submitted!</p>
+    </div>
+    
+    <div class="pricing">
+        <h3>Pricing</h3>
+        <ul>
+            <li><strong>Portrait Session:</strong> $100</li>
+            <li><strong>Event Photography:</strong> $300</li>
+            <li><strong>Wedding Photography:</strong> $800</li>
+            <li><strong>Product Photography:</strong> $150</li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("confirmation").style.display = "block";
+            setTimeout(() => {
+                alert("A confirmation email has been sent to your inbox.");
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
